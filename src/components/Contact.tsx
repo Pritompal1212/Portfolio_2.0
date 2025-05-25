@@ -185,18 +185,32 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 
+// ✅ Define form data type
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+// ✅ Reusable error message component with proper type
+const ErrorText: React.FC<{ error?: { message?: string } }> = ({ error }) =>
+  error?.message ? (
+    <p className="text-red-400 text-sm mt-1">{error.message}</p>
+  ) : null;
+
 const Contact = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
-  const onSubmit = async (data) => {
+  // ✅ Typed form submission
+  const onSubmit = async (data: FormData) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log(data);
+      console.log("Form Data:", data);
       toast.success("Message sent successfully!");
       reset();
     } catch (error) {
@@ -207,7 +221,7 @@ const Contact = () => {
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black px-4 pt-16 pb-24 flex items-center justify-center">
       <Toaster position="top-right" />
-      
+
       <div className="w-full max-w-2xl bg-gray-900 border border-gray-800 rounded-2xl shadow-lg p-8 space-y-8 text-white">
         <div className="space-y-2 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-green-400">Contact Me</h2>
@@ -226,9 +240,7 @@ const Contact = () => {
                 placeholder="Your Name"
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-500"
               />
-              {errors.name?.message && (
-                <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
-              )}
+              <ErrorText error={errors.name} />
             </div>
 
             <div>
@@ -245,9 +257,7 @@ const Contact = () => {
                 placeholder="Your Email"
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-500"
               />
-              {errors.email?.message && (
-                <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
-              )}
+              <ErrorText error={errors.email} />
             </div>
           </div>
 
@@ -259,9 +269,7 @@ const Contact = () => {
               placeholder="Your Message"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-500"
             ></textarea>
-            {errors.message?.message && (
-              <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
-            )}
+            <ErrorText error={errors.message} />
           </div>
 
           <div className="text-center">
@@ -280,3 +288,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
