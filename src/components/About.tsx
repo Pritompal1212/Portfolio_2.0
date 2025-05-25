@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const socialLinks = [
@@ -26,6 +27,7 @@ const About = () => {
             src="/hero.jpg"
             alt="Pritom Pal"
             className="w-full h-full object-cover"
+            
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-blue-500 opacity-20 mix-blend-multiply animate-gradient-x"></div>
         </div>
@@ -33,7 +35,7 @@ const About = () => {
         {/* Text Content */}
         <div className="flex-1 max-w-xl space-y-5 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-extrabold text-green-400">
-            Hey, I'm Pritom 👋
+            Hey, I&apos;m Pritom 👋
           </h2>
           <p className="text-base md:text-lg leading-relaxed text-gray-300">
             A Software Engineer passionate about crafting modern, high-performance apps. I focus on building smooth UIs and scalable backends that solve real-world problems.

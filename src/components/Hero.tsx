@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
             <span className="text-green-500 font-mono overflow-hidden whitespace-nowrap border-r-4 border-white typing-effect inline-block">
-              Hi, I'm Pritom Pal
+              Hi, I&apos;m Pritom Pal
             </span>
             <br />
             <span className="text-gray-300">Software Engineer</span>
@@ -39,8 +39,10 @@ const Hero = () => {
             <Image
               src="/hero.jpg"
               alt="Pritom Pal"
-              className="object-cover rounded-full border-4 "
-              layout="fill"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
             />
             {/* Border animation layers */}
             <div className="moving-border-1"></div>
