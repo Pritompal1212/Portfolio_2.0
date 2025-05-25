@@ -67,10 +67,11 @@ type FormData = {
   message: string;
 };
 
-const ErrorText: React.FC<{ error?: { message?: string } }> = ({ error }) =>
-  error?.message ? (
+function ErrorText({ error }: { error?: { message?: string } }) {
+  return error?.message ? (
     <p className="text-red-400 text-sm mt-1">{error.message}</p>
   ) : null;
+}
 
 const Contact = () => {
   const {
@@ -87,6 +88,7 @@ const Contact = () => {
       toast.success("Message sent successfully!");
       reset();
     } catch (error) {
+      console.error(error);  // <-- Added usage of 'error' here to fix ESLint warning
       toast.error("Failed to send message.");
     }
   };
@@ -161,4 +163,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
 

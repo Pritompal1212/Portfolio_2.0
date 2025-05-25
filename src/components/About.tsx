@@ -23,11 +23,12 @@ const About = () => {
       >
         {/* Image */}
         <div className="relative w-52 h-52 rounded-3xl overflow-hidden shadow-xl ring-4 ring-green-500 ring-opacity-60 hover:scale-105 transition-transform duration-500">
-          <img
+          <Image
             src="/hero.jpg"
             alt="Pritom Pal"
-            className="w-full h-full object-cover"
-            
+            fill
+            className="object-cover rounded-3xl"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-green-400 to-blue-500 opacity-20 mix-blend-multiply animate-gradient-x"></div>
         </div>

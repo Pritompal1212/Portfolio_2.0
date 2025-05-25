@@ -298,29 +298,8 @@ const MENU_ITEMS = ["home", "about", "skills", "projects", "services", "contact"
 const Navbar: React.FC<{ className?: string }> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      );
-    }
-    return false;
-  });
   const [hasScrolled, setHasScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDarkMode) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -491,3 +470,4 @@ const Navbar: React.FC<{ className?: string }> = ({ className }) => {
 };
 
 export default Navbar;
+
