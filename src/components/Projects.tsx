@@ -104,9 +104,9 @@ const projects = [
     demo: "https://loanai.streamlit.app",
   },
   {
-    title: "Movie App",
+    title: "Data Science Toolkit",
     image: "/OIP.jpeg",
-    description: "React + Tailwind app to explore and download movies.",
+    description: "Real-world Python-based solutions for data wrangling, visualization, and intelligent predictions.",
     github: "https://github.com/pritompal/movie-app",
     demo: "https://moviehub.vercel.app",
   },
