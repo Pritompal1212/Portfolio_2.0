@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const socialLinks = [
-  { name: "LinkedIn", url: "https://linkedin.com/in/pritom", icon: "🔗" },
-  { name: "GitHub", url: "https://github.com/pritom", icon: "🐙" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/pritom-pal/", icon: "🔗" },
+  { name: "GitHub", url: "https://github.com/Pritompal1212", icon: "🐙" },
   { name: "Twitter", url: "https://twitter.com/pritom", icon: "🐦" },
 ];
 
