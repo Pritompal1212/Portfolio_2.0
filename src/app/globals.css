@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -95,3 +97,7 @@ body {
 .typing-effect {
   animation: typing 4s steps(20) infinite alternate-reverse;
 }
+
+
+
+

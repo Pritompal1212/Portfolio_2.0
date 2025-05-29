@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb, SiTypescript } from "react-icons/si";
+import { FaReact, FaNodeJs, FaPython, FaHtml5, FaGitAlt, FaJsSquare } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiFlutter } from "react-icons/si";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import Marquee from "react-fast-marquee";
@@ -10,20 +10,23 @@ const skills = [
   { name: "React", icon: <FaReact />, level: 90 },
   { name: "Node.js", icon: <FaNodeJs />, level: 85 },
   { name: "Python", icon: <FaPython />, level: 80 },
-  { name: "TypeScript", icon: <SiTypescript />, level: 75 },
+  { name: "JavaScript", icon: <FaJsSquare />, level: 85 },
   { name: "MongoDB", icon: <SiMongodb />, level: 70 },
   { name: "Tailwind CSS", icon: <SiTailwindcss />, level: 85 },
   { name: "HTML5", icon: <FaHtml5 />, level: 95 },
-  { name: "CSS3", icon: <FaCss3Alt />, level: 90 },
+  { name: "Flutter", icon: <SiFlutter />, level: 88 },
   { name: "Git", icon: <FaGitAlt />, level: 80 },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-20 relative overflow-hidden">
+    <section
+      id="skills"
+      className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-20 relative overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
         <Marquee gradient={false} speed={20} className="text-8xl text-green-800/10 font-bold select-none">
-          React • Node.js • Python • TypeScript • MongoDB • Tailwind • HTML • CSS • Git • &nbsp;
+          React • Node.js • Python • JavaScript • MongoDB • Tailwind • HTML • Flutter • Git • &nbsp;
         </Marquee>
       </div>
 
